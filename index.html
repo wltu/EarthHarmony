@@ -9,30 +9,29 @@
 </head>
 <body>
     <div class="container">
-        <div>
-          <h1>Human Simulator</h1>
+        <div class="header">
+            <h1>Human Simulation</h1>
         </div>
 
         <div class="content">
-            <div class="canvas">
-              <canvas id="canvas"></canvas>
+            <div class="left-column">
+                <div class="canvas">
+                    <canvas id="canvas"></canvas>
+                </div>
             </div>
-            <div class="status">
-                <h2 id="currCivilization">Stone Age</h2>
-                <div class="humanNums"></div>
-                  <p id="currPopulation">0</p> 
-                  <p>humans/</p> 
-                  <p id="maxPopulation">27,000,000</p>
-                  <p>humans</p>
-                </div>
-                <p id="totalFood">Resources: 0</p>
-                <p id="conservationLevel">Conservation Level: 0</p>
+            <div class="right-column">
+                <h2>Current Civilization: Stone Age</h2>
+                <p><span id="landUsed">10%</span> of available land used</p>
+                <p><span id="currentPopulation">100</span> humans / <span id="maxPopulation">100,000</span> humans</p>
+                <p>Total food: <span id="totalFood">100,000</span> units</p>
+                <p>Food production rate: <span id="foodProductionRate">100,000</span> units/year</p>
+
                 <div class="controls">
-                    <button id="investBtn">Invest in Conservation (10 resources)</button>
-                    <button id="analyzeBtn">Analyze Soil (5 resources)</button>
-                    <button id="endGameBtn">End Game</button>
+                    <button class="build-btn" title="Build shelter: Increase max population, decrease available land">Build Shelter</button>
+                    <button class="build-btn" title="Build farm: Increase food production rate, decrease available land">Build Farm</button>
+                    <button class="next-btn" title="Unlocks when current population reaches the required limit">Next Civilization</button>
                 </div>
-                <p id="challengeMessage"></p>
+                <p class="population-info"><span id="nextPopulationReq">100,000,000</span> total population required to advance</p>
             </div>
         </div>
     </div>
