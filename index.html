@@ -1,0 +1,43 @@
+<!-- <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>WebGL Demo</title>
+    <script src="webgl-demo.js" type="module"></script>
+  </head>
+
+  <body>
+    <h1>Population Simulator</h1>
+    <canvas id="glcanvas" width="640" height="480"></canvas>
+
+  </body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soil Survivor</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="webgl-demo.js" type="module"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Population Simulator</h1>
+        <canvas id="canvas"></canvas>
+        <div class="status">
+            <h2>Status</h2>
+            <p id="soilQuality">Soil Quality: 100</p>
+            <p id="resources">Resources: 0</p>
+            <p id="conservationLevel">Conservation Level: 0</p>
+        </div>
+        <div class="controls">
+            <button id="investBtn">Invest in Conservation (10 resources)</button>
+            <button id="analyzeBtn">Analyze Soil (5 resources)</button>
+            <button id="endGameBtn">End Game</button>
+        </div>
+        <p id="challengeMessage"></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
