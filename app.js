@@ -17,6 +17,5 @@ app.get('', (req, res) => {
     res.render('index', { text: 'This is EJS'})
 })
 
-
 //  Listen on port 8000
 app.listen(port, () => console.info(`Listening on port ${port}`))

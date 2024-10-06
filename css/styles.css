@@ -3,11 +3,11 @@ body {
     background-color: #e8f5e9;
     color: #333;
     text-align: center;
-    /* padding: 20px; */
+    padding: 20px;
 }
 
 .container {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -16,27 +16,36 @@ h1 {
 }
 
 .content {
-    display: flex; /* Use flexbox to align the canvas and status side by side */
-    justify-content: space-between; /* Space between columns */
-    align-items: flex-start; /* Align items at the top */
+    display: flex;
+    /* Use flexbox to align the canvas and status side by side */
+    justify-content: space-between;
+    /* Space between columns */
+    align-items: flex-start;
+    /* Align items at the top */
 }
 
 .canvas {
-    flex: 1; /* Allow the canvas to take up available space */
-    margin-right: 20px; /* Space between canvas and status */
+    flex: 1;
+    /* Allow the canvas to take up available space */
+    margin-right: 20px;
+    /* Space between canvas and status */
 }
 
 #canvas {
     border: 1px solid #ccc;
     background-color: #f1f1f1;
-    width: 100%; /* Make canvas full width of its parent */
-    height: 400px; /* Set a fixed height for the canvas */
+    width: 100%;
+    /* Make canvas full width of its parent */
+    height: 400px;
+    /* Set a fixed height for the canvas */
 }
 
 .status {
-    flex: 0 0 250px; /* Set a fixed width for the status column */
+    flex: 0 0 250px;
+    /* Set a fixed width for the status column */
     display: flex;
-    flex-direction: column; /* Arrange status elements vertically */
+    flex-direction: column;
+    /* Arrange status elements vertically */
 }
 
 .controls button {
@@ -51,4 +60,9 @@ h1 {
 
 .controls button:hover {
     background-color: #45a049;
+}
+
+.controls button:disabled {
+    background: #F5F5F5;
+    color: #C3C3C3;
 }
