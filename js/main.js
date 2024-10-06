@@ -1,6 +1,9 @@
 let civilizationData = [
-    { name: "Stone Age", nextPopulationReq: 102 },
-    { name: "Bronze Age", nextPopulationReq: 100000 },
+    { name: "Stone", nextPopulationReq: 1000, crop: "potato" },
+    { name: "Bronze", nextPopulationReq: 3000, crop: "tomato" },
+    { name: "Iron", nextPopulationReq: 6000, crop: "rice" },
+    { name: "Classical", nextPopulationReq: 10000, crop: "potato3" },
+    { name: "Medieval", nextPopulationReq: 20000, crop: "chips" },
 ];
 
 let currentCivilizationIndex = 0;
@@ -17,6 +20,8 @@ let livableLand = currentPopulation;
 let naturalDeathRate = 0.07;
 let growthRateBasedOnExcessFood = 0.40;
 
+let availableCrops = ['<option value="" selected>potato</option></select>'];
+
 function updateStatus() {
     const currentCivilization = civilizationData[currentCivilizationIndex];
     document.getElementById('civilization').innerText = currentCivilization.name;
@@ -27,6 +32,7 @@ function updateStatus() {
     document.getElementById('totalFood').innerText = totalFood;
     document.getElementById('foodProductionRate').innerText = foodProductionRate;
     document.getElementById('nextPopulationReq').innerText = currentCivilization.nextPopulationReq;
+    document.getElementById("select-crop").innerHTML = availableCrops.join();
 }
 
 function setup() {
@@ -39,12 +45,12 @@ function setup() {
         foodProductionRate += 10;
         farmableLand += 10;
         document.getElementById('foodProductionRate').innerText = foodProductionRate;
-        document.querySelector('.select-crop').disabled = false;
     });
 
     document.querySelector('.next-gen').addEventListener('click', () => {
         if (currentCivilizationIndex < civilizationData.length - 1) {
             currentCivilizationIndex++;
+            availableCrops.push("<option value='' selected>" + civilizationData[currentCivilizationIndex].crop + "</option>");
             updateStatus();
         } else {
             alert("You have reached the last civilization!");
