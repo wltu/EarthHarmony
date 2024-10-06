@@ -1,31 +1,55 @@
-let civilizationData = [
-    { landUsed: '10%', population: 100, maxPopulation: 100000, totalFood: 100000, foodProductionRate: 100000, nextPopulationReq: 100000000 },
-    { landUsed: '20%', population: 500, maxPopulation: 500000, totalFood: 500000, foodProductionRate: 500000, nextPopulationReq: 500000000 },
-    { landUsed: '30%', population: 2000, maxPopulation: 2000000, totalFood: 2000000, foodProductionRate: 2000000, nextPopulationReq: 1000000000 },
-    // Add more civilizations as needed
-];
+main();
 
-let currentCivilizationIndex = 0;
+function main() {
+  const canvas = document.querySelector("#glcanvas");
+  // Initialize the GL context
+  const gl = canvas.getContext("webgl");
 
-function updateStatus() {
-    const currentCivilization = civilizationData[currentCivilizationIndex];
+  // Only continue if WebGL is available and working
+  if (gl === null) {
+    alert(
+      "Unable to initialize WebGL. Your browser or machine may not support it.",
+    );
+    return;
+  }
 
-    document.getElementById('landUsed').innerText = currentCivilization.landUsed;
-    document.getElementById('currentPopulation').innerText = currentCivilization.population;
-    document.getElementById('maxPopulation').innerText = currentCivilization.maxPopulation;
-    document.getElementById('totalFood').innerText = currentCivilization.totalFood;
-    document.getElementById('foodProductionRate').innerText = currentCivilization.foodProductionRate;
-    document.getElementById('nextPopulationReq').innerText = currentCivilization.nextPopulationReq;
+  // Set clear color to black, fully opaque
+  gl.clearColor(0.0, 0.0, 0.0, 1.0);
+  // Clear the color buffer with specified clear color
+  gl.clear(gl.COLOR_BUFFER_BIT);
+
+  // Draw land
+  drawLand();
+
+  // Draw farms
+  drawFarms();
+
+  // Draw shelters
+  drawShelters();
+
+  // Draw population
+  drawPopulation();
+
+  // Update the stats on the screen
+  updateStatsOnScreen();
+
+  // Request to render the next frame
+  requestAnimationFrame(render);
 }
 
-document.querySelector('.next-btn').addEventListener('click', () => {
-    if (currentCivilizationIndex < civilizationData.length - 1) {
-        currentCivilizationIndex++;
-        updateStatus();
-    } else {
-        alert("You have reached the last civilization!");
-    }
-});
 
-// Initial status update
-updateStatus();
+function drawPopulation() {
+    const currentPopulation = civilizationData[currentCivilizationIndex].population;
+    for (let i = 0; i < currentPopulation; i++) {
+        // Calculate position based on population
+        const position = calculatePopulationPosition(i);
+        drawHumanModel(position);
+    }
+}
+
+function drawHumanModel(position) {
+    // Create a sphere at the given position
+    // Create a cylinder for the body
+    // Bind buffers and set attributes
+    // Draw the model
+}
