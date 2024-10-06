@@ -4,7 +4,7 @@ canvas.width = 600;
 canvas.height = 400;
 
 let soilQuality = 100;
-let resources = 0;
+let resources = 100;
 let conservationLevel = 0;
 let challengeEffect = 0;
 
@@ -36,6 +36,9 @@ function manageResources(action) {
             soilQuality += 5;
             resources -= 5;
             displayStatus();
+            if (resources < 50) {
+                document.getElementById('testBtn').style.visibility = 'hidden';
+            }
         } else {
             alert("Not enough resources!");
         }
@@ -70,6 +73,7 @@ document.getElementById('endGameBtn').addEventListener('click', () => {
     window.close(); // Close the window
 });
 
+document.getElementById('testBtn').style.visibility = 'visible';
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     // Draw simple soil representation

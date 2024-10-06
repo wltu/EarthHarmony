@@ -3,7 +3,7 @@ body {
     background-color: #e8f5e9;
     color: #333;
     text-align: center;
-    padding: 20px;
+    /* padding: 20px; */
 }
 
 .container {
@@ -11,14 +11,32 @@ body {
     margin: 0 auto;
 }
 
-canvas {
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
+h1 {
     margin-bottom: 20px;
 }
 
+.content {
+    display: flex; /* Use flexbox to align the canvas and status side by side */
+    justify-content: space-between; /* Space between columns */
+    align-items: flex-start; /* Align items at the top */
+}
+
+.canvas {
+    flex: 1; /* Allow the canvas to take up available space */
+    margin-right: 20px; /* Space between canvas and status */
+}
+
+#canvas {
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width: 100%; /* Make canvas full width of its parent */
+    height: 400px; /* Set a fixed height for the canvas */
+}
+
 .status {
-    margin-bottom: 20px;
+    flex: 0 0 250px; /* Set a fixed width for the status column */
+    display: flex;
+    flex-direction: column; /* Arrange status elements vertically */
 }
 
 .controls button {
