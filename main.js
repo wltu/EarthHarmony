@@ -1,3 +1,7 @@
+// Description: This file contains the JavaScript code for the Civilization Clicker game.
+// It includes functions for building shelters and farms, calculating birth and mortality rates,
+// and updating the game state based on population, food, and other factors.
+
 // Civilization data
 let civilizationData = [
     { 
