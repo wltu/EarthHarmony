@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="right-column">
-                <h2>Current Civilization: <span id="civilization">10%</span></h2>
+                <h2>Current Civilization: <span id="civilization"></span> Age</h2>
                 <p><span id="landUsed"></span>% of available land used</p>
                 <p><span id="unuseableLand"></span>% of unuseable land</p>
                 <p><span id="currentPopulation">100</span> / <span id="maxPopulation">100,000</span> humans</p>
@@ -36,8 +36,8 @@
                     <button class="build-farm"
                         title="Build farm: Increase food production rate, decrease available land">Build
                         Farm</button>
-                    <button class="select-crop" title="Select the crop to build in the farm" disabled>Select
-                        Crop</button>
+                    <!-- <button class="select-crop" title="Select the crop to build in the farm"></button> -->
+                    <p>Select Crop:<select id="select-crop"></select></p>
                     <button class="next-gen" title="Unlocks when current population reaches the required limit"
                         disabled>Next
                         Civilization</button>
