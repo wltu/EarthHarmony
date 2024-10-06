@@ -1,0 +1,18 @@
+{
+  "name": "play_ground",
+  "version": "1.0.0",
+  "description": "Testing NodeJS",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Willy Tu",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.0",
+    "http": "^0.0.1-security",
+    "https": "^1.0.0"
+  }
+}
